@@ -1,6 +1,17 @@
 {
-	"image": "mcr.microsoft.com/devcontainers/universal:2",
-	"features": {
-		"ghcr.io/devcontainers/features/desktop-lite:1": {}
-	}
+    "name": "Python Tkinter Dev",
+    "image": "mcr.microsoft.com/devcontainers/python:3.11",
+    
+    "features": {
+        "ghcr.io/devcontainers/features/desktop-lite:1": {}
+    },
+
+    // Installs the tkinter library for Linux
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y python3-tk",
+
+    "containerEnv": {
+        "DISPLAY": ":1"
+    },
+
+    "forwardPorts": [6080]
 }
